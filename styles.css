@@ -1,0 +1,329 @@
+@font-face {
+    font-family: 'Geist';
+    src: url('fonts/Geist-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Geist-Mono';
+    src: url('fonts/GeistMono-Regular.ttf');
+}
+
+
+body{
+    background-color: #0A0A0A;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #D9D9D9;
+    font-family: 'Geist', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    max-width: 1440px;
+    width: 100%;
+    padding: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 64px;
+    padding-top: 35px;
+    height: 100vh;
+    justify-content: space-between;
+    position: relative;
+}
+
+.small-font {
+    font-family: 'Geist-Mono';
+    color: #9F9F9F;
+    font-size: 14px; /* Scaled down by 1/8 from 16px */
+    letter-spacing: -0.08em;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    gap: 42px; /* Scaled down by 1/8 from 24px */
+    margin-top: 26px; /* Scaled down from 30px */
+    transform: scale(0.875); /* Scaled down by 1/8 */
+    transform-origin: top left;
+}
+
+.home-container div{
+    display: flex;
+    flex-direction: row;
+    font-size: 21px; /* Scaled down by 1/8 from 24px */
+    font-family: 'Geist';
+    color: #9F9F9F;
+    gap: 0;
+    justify-content: space-between;
+    width: 800; /* Scaled down by 1/8 from 871px */
+}
+
+.home-container div div {
+    display: block;
+    flex-direction:column;
+    font-size: 24.5px; /* Scaled down by 1/8 from 28px */
+    font-weight: normal;
+    font-family: 'Geist';
+    color: #D9D9D9;
+    width: 257px; /* Scaled down by 1/8 from 294px */
+    align-items: flex-end;
+}
+
+.text-body {
+    font-size: 21px; /* Scaled down by 1/8 from 24px */
+    font-weight: normal;
+    font-family: 'Geist';
+    color: #9F9F9F;
+    letter-spacing: -0.08em;
+}
+
+.home-images {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 351px;
+    height: 100vh;
+    padding-top: 35px;
+    box-sizing: border-box;
+}
+
+
+.home-images img {
+    width: 351px;
+    height: calc((100vh - 85px) / 3);
+    object-fit: cover;
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .container {
+        gap: 2rem;
+        padding: 32px 16px;
+    }
+
+    .home-images img {
+        width: 300px;
+        height: 330px;
+    }
+}
+
+@media (max-width: 762px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        gap: 2rem;
+    }
+
+    .main-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 762px;
+    }
+
+    .home-images {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .home-images img {
+        width: 46vw;
+        height: auto;
+        max-width: 340px;
+    }
+}
+
+/* Navigation & footer scaffolding */
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-top: 0;
+    position: relative;
+    width: 760px;
+    padding-bottom: 80px;
+}
+
+.pager {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.pager .box {
+    width: 13px;
+    height: 14px;
+    background-color: #D9D9D9;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 58px;
+    justify-content: space-between;
+}
+
+.nav a {
+    font-family: 'Geist';
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    color: rgba(159,159,159,0.5);
+}
+
+.nav a:hover,
+.nav a:focus {
+    color: #F9F9F9;
+}
+
+.nav a.active {
+    color: #F9F9F9;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    align-items: flex-end;
+    height: 114px;
+    justify-content: center;
+}
+
+.socials p {
+    font-family: 'Geist';
+    color: #D9D9D9;
+    font-size: 24px;
+    letter-spacing: -0.08em;
+}
+
+.socials div {
+    display: flex;
+    gap: 12px;
+}
+
+.socials img {
+    width: 42px;
+    height: 42px;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.socials img:hover,
+.socials img:focus {
+    opacity: 1;
+}
+
+/* About Section Styles */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    padding-top: 35px;
+    margin-left: 64px;
+    width: 760px; 
+    position: relative;
+}
+
+.about-container {
+    display: flex;
+    gap: 30px;
+    height: 550px;
+    align-items: center;
+    transform: scale(0.875);
+    transform-origin: top left;
+}
+
+.about-image {
+    width: 400px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.about-header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.section-label {
+    font-family: 'Geist-Mono';
+    color: #9F9F9F;
+    font-size: 20px;
+}
+
+.underline {
+    width: 62px;
+    height: 1px;
+    background-color: #D9D9D9;
+}
+
+.about-text {
+    font-size: 16px;
+    color: #9F9F9F;
+    font-family: 'Geist';
+    line-height: 1;
+    width: 600px;
+}
+
+.about-text p {
+    margin-bottom: 16px;
+}
+
+.highlight {
+    color: #D9D9D9;
+}
+
+.about-text ul {
+    list-style-type: disc;
+    padding-left: 30px;
+    color: #9F9F9F;
+}
+
+.about-text li {
+    margin-bottom: 8px;
+}
+
+/* About page styles now in separate file */
+
+/* Typography base */
+body, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p, .text-body {
+    line-height: 1.5;
+}
